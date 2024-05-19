@@ -11,6 +11,7 @@ Routes:
 /python/(<text>): display “Python ” followed by the value of the text variable
 (replace underscore _ symbols with a space).
 The default value of text is “is cool”.
+/number/<n>: display “n is a number” only if n is an integer
 The route definitions use the option strict_slashes=False.
 """
 
@@ -64,6 +65,17 @@ def python_text(text='is cool'):
     replaced by spaces. If no text is provided, it defaults to "is cool".
     """
     return "Python " + text.replace('_', ' ')
+
+
+@app.route('/number/<int:n>', strict_slashes=False)
+def number(n):
+    """
+    Displays a message indicating that n is a number.
+
+    This function handles the /number/<n> route and returns the string
+    "n is a number" only if n is an integer.
+    """
+    return f"{n} is a number"
 
 
 if __name__ == "__main__":
