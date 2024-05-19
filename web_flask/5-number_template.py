@@ -88,7 +88,7 @@ def number_template(n):
     This function handles the /number_template/<n> route and renders an HTML
     page with an H1 tag: “Number: n” inside the BODY tag.
     """
-    return render_template('number.html', number=n)
+    return render_template('5-number.html', number=n)
 
 
 if __name__ == "__main__":
